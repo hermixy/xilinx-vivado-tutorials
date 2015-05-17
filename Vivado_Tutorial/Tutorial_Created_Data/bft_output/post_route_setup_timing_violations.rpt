@@ -1,0 +1,16 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.1 (lin64) Build 1215546 Mon Apr 27 19:07:21 MDT 2015
+| Date         : Sun May 17 01:43:15 2015
+| Host         : MY-Ubuntu running 64-bit Ubuntu 14.04.2 LTS
+| Command      : report_timing -max_paths 100 -path_type summary -slack_lesser_than 0 -file ./Tutorial_Created_Data/bft_output/post_route_setup_timing_violations.rpt
+| Design       : bft
+| Device       : 7k70t-fbg484
+| Speed File   : -2  PRODUCTION 1.12 2014-09-11
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+No timing paths found.
+
+

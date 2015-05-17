@@ -1,0 +1,741 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.1 (lin64) Build 1215546 Mon Apr 27 19:07:21 MDT 2015
+| Date         : Sun May 17 01:42:45 2015
+| Host         : MY-Ubuntu running 64-bit Ubuntu 14.04.2 LTS
+| Command      : report_timing_summary -file ./Tutorial_Created_Data/bft_output/post_route_timing_summary.rpt
+| Design       : bft
+| Device       : 7k70t-fbg484
+| Speed File   : -2  PRODUCTION 1.12 2014-09-11
+--------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 35 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 34 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.126        0.000                      0                 9477        0.038        0.000                      0                 9477        2.100        0.000                       0                  1628  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock   Waveform(ns)         Period(ns)      Frequency(MHz)
+-----   ------------         ----------      --------------
+bftClk  {0.000 2.500}        5.000           200.000         
+wbClk   {0.000 5.000}        10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+bftClk              0.126        0.000                      0                 7689        0.038        0.000                      0                 7689        2.100        0.000                       0                   827  
+wbClk               6.188        0.000                      0                 1787        0.063        0.000                      0                 1787        4.600        0.000                       0                   801  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+wbClk         bftClk              0.638        0.000                      0                  424        0.107        0.000                      0                  424  
+bftClk        wbClk               1.711        0.000                      0                   17        0.131        0.000                      0                   17  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  bftClk
+  To Clock:  bftClk
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.126ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.038ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        2.100ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.126ns  (required time - arrival time)
+  Source:                 arnd2/ct5/multOp/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by bftClk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            arnd2/ct5/xOutStepReg_reg/A[16]
+                            (rising edge-triggered cell DSP48E1 clocked by bftClk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             bftClk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (bftClk rise@5.000ns - bftClk rise@0.000ns)
+  Data Path Delay:        3.418ns  (logic 2.860ns (83.681%)  route 0.558ns (16.319%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.701ns = ( 8.701 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.034ns
+    Clock Pessimism Removal (CPR):    0.307ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock bftClk rise edge)     0.000     0.000 r  
+    W17                                               0.000     0.000 r  bftClk (IN)
+                         net (fo=0)                   0.000     0.000    bftClk
+    W17                  IBUF (Prop_ibuf_I_O)         0.749     0.749 r  bftClk_IBUF_inst/O
+                         net (fo=1, routed)           1.901     2.650    bftClk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.093     2.743 r  bftClk_IBUF_BUFG_inst/O
+                         net (fo=858, routed)         1.291     4.034    arnd2/ct5/wr_clk
+    DSP48_X0Y37          DSP48E1                                      r  arnd2/ct5/multOp/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y37          DSP48E1 (Prop_dsp48e1_CLK_P[31])
+                                                      2.860     6.894 r  arnd2/ct5/multOp/P[31]
+                         net (fo=17, routed)          0.558     7.452    arnd2/ct5/A[13]
+    DSP48_X0Y36          DSP48E1                                      r  arnd2/ct5/xOutStepReg_reg/A[16]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock bftClk rise edge)     5.000     5.000 r  
+    W17                                               0.000     5.000 r  bftClk (IN)
+                         net (fo=0)                   0.000     5.000    bftClk
+    W17                  IBUF (Prop_ibuf_I_O)         0.674     5.674 r  bftClk_IBUF_inst/O
+                         net (fo=1, routed)           1.787     7.461    bftClk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.083     7.544 r  bftClk_IBUF_BUFG_inst/O
+                         net (fo=858, routed)         1.157     8.701    arnd2/ct5/wr_clk
+    DSP48_X0Y36          DSP48E1                                      r  arnd2/ct5/xOutStepReg_reg/CLK
+                         clock pessimism              0.307     9.008    
+                         clock uncertainty           -0.035     8.973    
+    DSP48_X0Y36          DSP48E1 (Setup_dsp48e1_CLK_A[16])
+                                                     -1.395     7.578    arnd2/ct5/xOutStepReg_reg
+  -------------------------------------------------------------------
+                         required time                          7.578    
+                         arrival time                          -7.452    
+  -------------------------------------------------------------------
+                         slack                                  0.126    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.038ns  (arrival time - required time)
+  Source:                 ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.next_rd_addr_reg[6]/C
+                            (rising edge-triggered cell FDCE clocked by bftClk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.rd_addr_reg_rep[6]/D
+                            (rising edge-triggered cell FDCE clocked by bftClk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             bftClk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (bftClk rise@0.000ns - bftClk rise@0.000ns)
+  Data Path Delay:        0.210ns  (logic 0.100ns (47.517%)  route 0.110ns (52.483%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.140ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.049ns
+    Source Clock Delay      (SCD):    1.584ns
+    Clock Pessimism Removal (CPR):    0.325ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock bftClk rise edge)     0.000     0.000 r  
+    W17                                               0.000     0.000 r  bftClk (IN)
+                         net (fo=0)                   0.000     0.000    bftClk
+    W17                  IBUF (Prop_ibuf_I_O)         0.091     0.091 r  bftClk_IBUF_inst/O
+                         net (fo=1, routed)           0.863     0.954    bftClk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.980 r  bftClk_IBUF_BUFG_inst/O
+                         net (fo=858, routed)         0.604     1.584    ingressLoop[2].ingressFifo/buffer_fifo/bftClk_IBUF_BUFG
+    SLICE_X11Y49         FDCE                                         r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.next_rd_addr_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y49         FDCE (Prop_fdce_C_Q)         0.100     1.684 r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.next_rd_addr_reg[6]/Q
+                         net (fo=3, routed)           0.110     1.795    ingressLoop[2].ingressFifo/buffer_fifo/next_rd_addr[6]
+    SLICE_X8Y50          FDCE                                         r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.rd_addr_reg_rep[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock bftClk rise edge)     0.000     0.000 r  
+    W17                                               0.000     0.000 r  bftClk (IN)
+                         net (fo=0)                   0.000     0.000    bftClk
+    W17                  IBUF (Prop_ibuf_I_O)         0.339     0.339 r  bftClk_IBUF_inst/O
+                         net (fo=1, routed)           0.928     1.267    bftClk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030     1.297 r  bftClk_IBUF_BUFG_inst/O
+                         net (fo=858, routed)         0.752     2.049    ingressLoop[2].ingressFifo/buffer_fifo/bftClk_IBUF_BUFG
+    SLICE_X8Y50          FDCE                                         r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.rd_addr_reg_rep[6]/C
+                         clock pessimism             -0.325     1.724    
+    SLICE_X8Y50          FDCE (Hold_fdce_C_D)         0.032     1.756    ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.rd_addr_reg_rep[6]
+  -------------------------------------------------------------------
+                         required time                         -1.756    
+                         arrival time                           1.795    
+  -------------------------------------------------------------------
+                         slack                                  0.038    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         bftClk
+Waveform(ns):       { 0.000 2.500 }
+Period(ns):         5.000
+Sources:            { bftClk }
+
+Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     DSP48E1/CLK  n/a            2.772         5.000       2.228      DSP48_X0Y28   arnd1/transformLoop[0].ct/xOutReg_reg/CLK
+Low Pulse Width   Slow    FDCE/C       n/a            0.400         2.500       2.100      SLICE_X17Y13  egressLoop[3].egressFifo/buffer_fifo/infer_fifo.two_wr_addr_reg[5]/C
+High Pulse Width  Slow    FDCE/C       n/a            0.350         2.500       2.150      SLICE_X23Y23  egressLoop[6].egressFifo/buffer_fifo/infer_fifo.next_wr_addr_reg[5]/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  wbClk
+  To Clock:  wbClk
+
+Setup :            0  Failing Endpoints,  Worst Slack        6.188ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.063ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.600ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             6.188ns  (required time - arrival time)
+  Source:                 egressLoop[3].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by wbClk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            wbOutputData_reg[19]/D
+                            (rising edge-triggered cell FDRE clocked by wbClk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             wbClk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (wbClk rise@10.000ns - wbClk rise@0.000ns)
+  Data Path Delay:        3.729ns  (logic 1.886ns (50.580%)  route 1.843ns (49.420%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.082ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.817ns = ( 13.817 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.186ns
+    Clock Pessimism Removal (CPR):    0.287ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock wbClk rise edge)      0.000     0.000 r  
+    V20                                               0.000     0.000 r  wbClk (IN)
+                         net (fo=0)                   0.000     0.000    wbClk
+    V20                  IBUF (Prop_ibuf_I_O)         0.764     0.764 r  wbClk_IBUF_inst/O
+                         net (fo=1, routed)           1.901     2.665    wbClk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.093     2.758 r  wbClk_IBUF_BUFG_inst/O
+                         net (fo=800, routed)         1.428     4.186    egressLoop[3].egressFifo/buffer_fifo/wbClk_IBUF_BUFG
+    RAMB36_X0Y3          RAMB36E1                                     r  egressLoop[3].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y3          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[19])
+                                                      1.800     5.986 r  egressLoop[3].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg/DOBDO[19]
+                         net (fo=1, routed)           0.977     6.963    egressLoop[2].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg_0[19]
+    SLICE_X23Y18         LUT6 (Prop_lut6_I5_O)        0.043     7.006 r  egressLoop[2].egressFifo/buffer_fifo/wbOutputData[19]_i_3/O
+                         net (fo=1, routed)           0.866     7.872    egressLoop[1].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg_25
+    SLICE_X23Y28         LUT6 (Prop_lut6_I5_O)        0.043     7.915 r  egressLoop[1].egressFifo/buffer_fifo/wbOutputData[19]_i_1/O
+                         net (fo=1, routed)           0.000     7.915    egressLoop[1].egressFifo_n_13
+    SLICE_X23Y28         FDRE                                         r  wbOutputData_reg[19]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock wbClk rise edge)     10.000    10.000 r  
+    V20                                               0.000    10.000 r  wbClk (IN)
+                         net (fo=0)                   0.000    10.000    wbClk
+    V20                  IBUF (Prop_ibuf_I_O)         0.689    10.689 r  wbClk_IBUF_inst/O
+                         net (fo=1, routed)           1.787    12.476    wbClk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.083    12.559 r  wbClk_IBUF_BUFG_inst/O
+                         net (fo=800, routed)         1.258    13.817    wbClk_IBUF_BUFG
+    SLICE_X23Y28         FDRE                                         r  wbOutputData_reg[19]/C
+                         clock pessimism              0.287    14.104    
+                         clock uncertainty           -0.035    14.069    
+    SLICE_X23Y28         FDRE (Setup_fdre_C_D)        0.034    14.103    wbOutputData_reg[19]
+  -------------------------------------------------------------------
+                         required time                         14.103    
+                         arrival time                          -7.915    
+  -------------------------------------------------------------------
+                         slack                                  6.188    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.063ns  (arrival time - required time)
+  Source:                 egressLoop[6].egressFifo/buffer_fifo/infer_fifo.rd_addr_reg_rep[9]/C
+                            (rising edge-triggered cell FDCE clocked by wbClk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            egressLoop[6].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg/ADDRBWRADDR[14]
+                            (rising edge-triggered cell RAMB36E1 clocked by wbClk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             wbClk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (wbClk rise@0.000ns - wbClk rise@0.000ns)
+  Data Path Delay:        0.307ns  (logic 0.100ns (32.525%)  route 0.207ns (67.475%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.062ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.148ns
+    Source Clock Delay      (SCD):    1.581ns
+    Clock Pessimism Removal (CPR):    0.505ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock wbClk rise edge)      0.000     0.000 r  
+    V20                                               0.000     0.000 r  wbClk (IN)
+                         net (fo=0)                   0.000     0.000    wbClk
+    V20                  IBUF (Prop_ibuf_I_O)         0.106     0.106 r  wbClk_IBUF_inst/O
+                         net (fo=1, routed)           0.863     0.969    wbClk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.995 r  wbClk_IBUF_BUFG_inst/O
+                         net (fo=800, routed)         0.586     1.581    egressLoop[6].egressFifo/buffer_fifo/wbClk_IBUF_BUFG
+    SLICE_X24Y27         FDCE                                         r  egressLoop[6].egressFifo/buffer_fifo/infer_fifo.rd_addr_reg_rep[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y27         FDCE (Prop_fdce_C_Q)         0.100     1.681 r  egressLoop[6].egressFifo/buffer_fifo/infer_fifo.rd_addr_reg_rep[9]/Q
+                         net (fo=1, routed)           0.207     1.889    egressLoop[6].egressFifo/buffer_fifo/rd_addr_0[9]
+    RAMB36_X1Y5          RAMB36E1                                     r  egressLoop[6].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg/ADDRBWRADDR[14]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock wbClk rise edge)      0.000     0.000 r  
+    V20                                               0.000     0.000 r  wbClk (IN)
+                         net (fo=0)                   0.000     0.000    wbClk
+    V20                  IBUF (Prop_ibuf_I_O)         0.354     0.354 r  wbClk_IBUF_inst/O
+                         net (fo=1, routed)           0.928     1.282    wbClk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030     1.312 r  wbClk_IBUF_BUFG_inst/O
+                         net (fo=800, routed)         0.836     2.148    egressLoop[6].egressFifo/buffer_fifo/wbClk_IBUF_BUFG
+    RAMB36_X1Y5          RAMB36E1                                     r  egressLoop[6].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg/CLKBWRCLK
+                         clock pessimism             -0.505     1.643    
+    RAMB36_X1Y5          RAMB36E1 (Hold_ramb36e1_CLKBWRCLK_ADDRBWRADDR[14])
+                                                      0.183     1.826    egressLoop[6].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg
+  -------------------------------------------------------------------
+                         required time                         -1.826    
+                         arrival time                           1.889    
+  -------------------------------------------------------------------
+                         slack                                  0.063    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         wbClk
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { wbClk }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            1.839         10.000      8.161      RAMB36_X1Y4   egressLoop[0].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg/CLKBWRCLK
+Low Pulse Width   Slow    FDCE/C              n/a            0.400         5.000       4.600      SLICE_X8Y21   egressLoop[5].egressFifo/buffer_fifo/infer_fifo.rd_addr_reg[7]/C
+High Pulse Width  Fast    FDCE/C              n/a            0.350         5.000       4.650      SLICE_X25Y19  egressLoop[0].egressFifo/buffer_fifo/infer_fifo.rd_addr_reg[8]/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  wbClk
+  To Clock:  bftClk
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.638ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.107ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.638ns  (required time - arrival time)
+  Source:                 ingressFifoWrEn_reg/C
+                            (rising edge-triggered cell FDRE clocked by wbClk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.next_rd_addr_reg[5]/CE
+                            (rising edge-triggered cell FDCE clocked by bftClk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             bftClk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (bftClk rise@5.000ns - wbClk rise@0.000ns)
+  Data Path Delay:        3.583ns  (logic 0.302ns (8.430%)  route 3.281ns (91.570%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.543ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.620ns = ( 8.620 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.163ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock wbClk rise edge)      0.000     0.000 r  
+    V20                                               0.000     0.000 r  wbClk (IN)
+                         net (fo=0)                   0.000     0.000    wbClk
+    V20                  IBUF (Prop_ibuf_I_O)         0.764     0.764 r  wbClk_IBUF_inst/O
+                         net (fo=1, routed)           1.901     2.665    wbClk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.093     2.758 r  wbClk_IBUF_BUFG_inst/O
+                         net (fo=800, routed)         1.405     4.163    wbClk_IBUF_BUFG
+    SLICE_X8Y40          FDRE                                         r  ingressFifoWrEn_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y40          FDRE (Prop_fdre_C_Q)         0.259     4.422 r  ingressFifoWrEn_reg/Q
+                         net (fo=24, routed)          2.760     7.183    ingressLoop[5].ingressFifo/buffer_fifo/ingressFifoWrEn
+    SLICE_X45Y76         LUT2 (Prop_lut2_I0_O)        0.043     7.226 r  ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.rd_addr_rep[9]_i_1__4/O
+                         net (fo=50, routed)          0.520     7.746    ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.rd_addr_rep[9]_i_1__4_n_0
+    SLICE_X45Y72         FDCE                                         r  ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.next_rd_addr_reg[5]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock bftClk rise edge)     5.000     5.000 r  
+    W17                                               0.000     5.000 r  bftClk (IN)
+                         net (fo=0)                   0.000     5.000    bftClk
+    W17                  IBUF (Prop_ibuf_I_O)         0.674     5.674 r  bftClk_IBUF_inst/O
+                         net (fo=1, routed)           1.787     7.461    bftClk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.083     7.544 r  bftClk_IBUF_BUFG_inst/O
+                         net (fo=858, routed)         1.076     8.620    ingressLoop[5].ingressFifo/buffer_fifo/bftClk_IBUF_BUFG
+    SLICE_X45Y72         FDCE                                         r  ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.next_rd_addr_reg[5]/C
+                         clock pessimism              0.000     8.620    
+                         clock uncertainty           -0.035     8.585    
+    SLICE_X45Y72         FDCE (Setup_fdce_C_CE)      -0.201     8.384    ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.next_rd_addr_reg[5]
+  -------------------------------------------------------------------
+                         required time                          8.384    
+                         arrival time                          -7.746    
+  -------------------------------------------------------------------
+                         slack                                  0.638    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.107ns  (arrival time - required time)
+  Source:                 egressLoop[1].egressFifo/buffer_fifo/infer_fifo.rd_addr_reg[8]/C
+                            (rising edge-triggered cell FDCE clocked by wbClk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_reg/D
+                            (rising edge-triggered cell FDCE clocked by bftClk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             bftClk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (bftClk rise@0.000ns - wbClk rise@0.000ns)
+  Data Path Delay:        0.749ns  (logic 0.241ns (32.173%)  route 0.508ns (67.827%))
+  Logic Levels:           3  (CARRY4=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        0.520ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.107ns
+    Source Clock Delay      (SCD):    1.587ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock wbClk rise edge)      0.000     0.000 r  
+    V20                                               0.000     0.000 r  wbClk (IN)
+                         net (fo=0)                   0.000     0.000    wbClk
+    V20                  IBUF (Prop_ibuf_I_O)         0.106     0.106 r  wbClk_IBUF_inst/O
+                         net (fo=1, routed)           0.863     0.969    wbClk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.995 r  wbClk_IBUF_BUFG_inst/O
+                         net (fo=800, routed)         0.592     1.587    egressLoop[1].egressFifo/buffer_fifo/rd_clk
+    SLICE_X9Y27          FDCE                                         r  egressLoop[1].egressFifo/buffer_fifo/infer_fifo.rd_addr_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y27          FDCE (Prop_fdce_C_Q)         0.100     1.687 r  egressLoop[1].egressFifo/buffer_fifo/infer_fifo.rd_addr_reg[8]/Q
+                         net (fo=2, routed)           0.251     1.938    egressLoop[1].egressFifo/buffer_fifo/rd_addr[8]
+    SLICE_X11Y27         LUT6 (Prop_lut6_I3_O)        0.028     1.966 r  egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_i_4__8/O
+                         net (fo=1, routed)           0.000     1.966    egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_i_4__8_n_0
+    SLICE_X11Y27         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.085     2.051 r  egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_reg_i_2__8/CO[3]
+                         net (fo=1, routed)           0.257     2.308    egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_reg2
+    SLICE_X10Y27         LUT4 (Prop_lut4_I0_O)        0.028     2.336 r  egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_i_1__8/O
+                         net (fo=1, routed)           0.000     2.336    egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_reg0
+    SLICE_X10Y27         FDCE                                         r  egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock bftClk rise edge)     0.000     0.000 r  
+    W17                                               0.000     0.000 r  bftClk (IN)
+                         net (fo=0)                   0.000     0.000    bftClk
+    W17                  IBUF (Prop_ibuf_I_O)         0.339     0.339 r  bftClk_IBUF_inst/O
+                         net (fo=1, routed)           0.928     1.267    bftClk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.030     1.297 r  bftClk_IBUF_BUFG_inst/O
+                         net (fo=858, routed)         0.810     2.107    egressLoop[1].egressFifo/buffer_fifo/bftClk_IBUF_BUFG
+    SLICE_X10Y27         FDCE                                         r  egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_reg/C
+                         clock pessimism              0.000     2.107    
+                         clock uncertainty            0.035     2.143    
+    SLICE_X10Y27         FDCE (Hold_fdce_C_D)         0.087     2.230    egressLoop[1].egressFifo/buffer_fifo/infer_fifo.full_reg_reg
+  -------------------------------------------------------------------
+                         required time                         -2.230    
+                         arrival time                           2.336    
+  -------------------------------------------------------------------
+                         slack                                  0.107    
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  bftClk
+  To Clock:  wbClk
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.711ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.131ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.711ns  (required time - arrival time)
+  Source:                 egressLoop[7].egressFifo/buffer_fifo/infer_fifo.wr_addr_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by bftClk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_reg/D
+                            (rising edge-triggered cell FDPE clocked by wbClk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             wbClk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (wbClk rise@10.000ns - bftClk rise@5.000ns)
+  Data Path Delay:        2.971ns  (logic 0.637ns (21.444%)  route 2.334ns (78.556%))
+  Logic Levels:           3  (CARRY4=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.317ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.817ns = ( 13.817 - 10.000 ) 
+    Source Clock Delay      (SCD):    4.134ns = ( 9.134 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock bftClk rise edge)     5.000     5.000 r  
+    W17                                               0.000     5.000 r  bftClk (IN)
+                         net (fo=0)                   0.000     5.000    bftClk
+    W17                  IBUF (Prop_ibuf_I_O)         0.749     5.749 r  bftClk_IBUF_inst/O
+                         net (fo=1, routed)           1.901     7.650    bftClk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.093     7.743 r  bftClk_IBUF_BUFG_inst/O
+                         net (fo=858, routed)         1.391     9.134    egressLoop[7].egressFifo/buffer_fifo/bftClk_IBUF_BUFG
+    SLICE_X25Y32         FDCE                                         r  egressLoop[7].egressFifo/buffer_fifo/infer_fifo.wr_addr_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X25Y32         FDCE (Prop_fdce_C_Q)         0.204     9.338 r  egressLoop[7].egressFifo/buffer_fifo/infer_fifo.wr_addr_reg[4]/Q
+                         net (fo=3, routed)           1.076    10.414    egressLoop[7].egressFifo/buffer_fifo/wr_addr[4]
+    SLICE_X24Y31         LUT6 (Prop_lut6_I4_O)        0.123    10.537 r  egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_i_10__14/O
+                         net (fo=1, routed)           0.000    10.537    egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_i_10__14_n_0
+    SLICE_X24Y31         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.267    10.804 r  egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_reg_i_3__14/CO[3]
+                         net (fo=2, routed)           1.258    12.062    egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_reg2
+    SLICE_X26Y31         LUT4 (Prop_lut4_I2_O)        0.043    12.105 r  egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_i_1__14/O
+                         net (fo=1, routed)           0.000    12.105    egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_reg0
+    SLICE_X26Y31         FDPE                                         r  egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock wbClk rise edge)     10.000    10.000 r  
+    V20                                               0.000    10.000 r  wbClk (IN)
+                         net (fo=0)                   0.000    10.000    wbClk
+    V20                  IBUF (Prop_ibuf_I_O)         0.689    10.689 r  wbClk_IBUF_inst/O
+                         net (fo=1, routed)           1.787    12.476    wbClk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.083    12.559 r  wbClk_IBUF_BUFG_inst/O
+                         net (fo=800, routed)         1.258    13.817    egressLoop[7].egressFifo/buffer_fifo/wbClk_IBUF_BUFG
+    SLICE_X26Y31         FDPE                                         r  egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_reg/C
+                         clock pessimism              0.000    13.817    
+                         clock uncertainty           -0.035    13.782    
+    SLICE_X26Y31         FDPE (Setup_fdpe_C_D)        0.034    13.816    egressLoop[7].egressFifo/buffer_fifo/infer_fifo.empty_reg_reg
+  -------------------------------------------------------------------
+                         required time                         13.816    
+                         arrival time                         -12.105    
+  -------------------------------------------------------------------
+                         slack                                  1.711    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.131ns  (arrival time - required time)
+  Source:                 ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.rd_addr_reg[6]/C
+                            (rising edge-triggered cell FDCE clocked by bftClk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_reg/D
+                            (rising edge-triggered cell FDCE clocked by wbClk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             wbClk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (wbClk rise@0.000ns - bftClk rise@0.000ns)
+  Data Path Delay:        0.786ns  (logic 0.259ns (32.962%)  route 0.527ns (67.038%))
+  Logic Levels:           3  (CARRY4=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        0.532ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.064ns
+    Source Clock Delay      (SCD):    1.532ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock bftClk rise edge)     0.000     0.000 r  
+    W17                                               0.000     0.000 r  bftClk (IN)
+                         net (fo=0)                   0.000     0.000    bftClk
+    W17                  IBUF (Prop_ibuf_I_O)         0.091     0.091 r  bftClk_IBUF_inst/O
+                         net (fo=1, routed)           0.863     0.954    bftClk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.980 r  bftClk_IBUF_BUFG_inst/O
+                         net (fo=858, routed)         0.552     1.532    ingressLoop[2].ingressFifo/buffer_fifo/bftClk_IBUF_BUFG
+    SLICE_X10Y50         FDCE                                         r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.rd_addr_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y50         FDCE (Prop_fdce_C_Q)         0.118     1.650 r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.rd_addr_reg[6]/Q
+                         net (fo=2, routed)           0.228     1.879    ingressLoop[2].ingressFifo/buffer_fifo/rd_addr[6]
+    SLICE_X11Y51         LUT6 (Prop_lut6_I0_O)        0.028     1.907 r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_i_4__1/O
+                         net (fo=1, routed)           0.000     1.907    ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_i_4__1_n_0
+    SLICE_X11Y51         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.085     1.992 r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_reg_i_2__1/CO[3]
+                         net (fo=1, routed)           0.298     2.290    ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_reg2
+    SLICE_X10Y52         LUT4 (Prop_lut4_I0_O)        0.028     2.318 r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_i_1__3/O
+                         net (fo=1, routed)           0.000     2.318    ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_reg0
+    SLICE_X10Y52         FDCE                                         r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock wbClk rise edge)      0.000     0.000 r  
+    V20                                               0.000     0.000 r  wbClk (IN)
+                         net (fo=0)                   0.000     0.000    wbClk
+    V20                  IBUF (Prop_ibuf_I_O)         0.354     0.354 r  wbClk_IBUF_inst/O
+                         net (fo=1, routed)           0.928     1.282    wbClk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.030     1.312 r  wbClk_IBUF_BUFG_inst/O
+                         net (fo=800, routed)         0.752     2.064    ingressLoop[2].ingressFifo/buffer_fifo/wbClk_IBUF_BUFG
+    SLICE_X10Y52         FDCE                                         r  ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_reg/C
+                         clock pessimism              0.000     2.064    
+                         clock uncertainty            0.035     2.100    
+    SLICE_X10Y52         FDCE (Hold_fdce_C_D)         0.087     2.187    ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.full_reg_reg
+  -------------------------------------------------------------------
+                         required time                         -2.187    
+                         arrival time                           2.318    
+  -------------------------------------------------------------------
+                         slack                                  0.131    
+
+
+
+
+

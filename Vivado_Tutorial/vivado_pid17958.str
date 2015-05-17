@@ -19967,3 +19967,6 @@ setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "stop_gui", true); // W
 // TclEventType: TIMING_RESULTS_STALE
 // TclEventType: ROUTE_DESIGN
 // HMemoryUtils.trashcanNow. Engine heap size: 5,834 MB. GUI used memory: 25 MB. Current time: 5/17/15 1:41:09 AM PDT
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: POWER_CNS_UPDATED
+// TclEventType: POWER_UPDATED
