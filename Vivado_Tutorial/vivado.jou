@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2015.1 (64-bit)
+# SW Build 1215546 on Mon Apr 27 19:07:21 MDT 2015
+# IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
+# Start of session at: Sun May 17 01:11:31 2015
+# Process ID: 17958
+# Log file: /home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/vivado.log
+# Journal file: /home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/vivado.jou
+#-----------------------------------------------------------
+source create_bft_kintex7_batch.tcl

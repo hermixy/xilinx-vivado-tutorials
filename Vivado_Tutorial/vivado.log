@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2015.1 (64-bit)
+# SW Build 1215546 on Mon Apr 27 19:07:21 MDT 2015
+# IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
+# Start of session at: Sun May 17 01:11:31 2015
+# Process ID: 17958
+# Log file: /home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/vivado.log
+# Journal file: /home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/vivado.jou
+#-----------------------------------------------------------
+source create_bft_kintex7_batch.tcl
+# set outputDir ./Tutorial_Created_Data/bft_output             
+# file mkdir $outputDir
+# set_part xc7k70tfbg484-2
+# read_vhdl -library bftLib [ glob ./Sources/hdl/bftLib/*.vhdl ]         
+# read_vhdl ./Sources/hdl/bft.vhdl
+# read_verilog  [ glob ./Sources/hdl/*.v ]
+# read_xdc ./Sources/bft_full_kintex7.xdc
