@@ -1216,3 +1216,7 @@ report_high_fanout_nets -min_fanout 200 -max_nets 50 -file $outputDir/post_synth
 WARNING: [Vivado 12-4265] -min_fanout option has been deprecated and will be removed in future release. Please use -fanout_greater_than option instead.
 report_high_fanout_nets: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1721.105 ; gain = 0.000 ; free physical = 1177 ; free virtual = 3696
 /home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Tutorial_Created_Data/bft_output/post_synth_high_fanout_nets.rpt
+start_gui 
+place_ports {wbOutputData[4]} U15
+write_xdc -force /home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Tutorial_Created_Data/bft_output/constrs_1.xdc -no_fixed_only
+stop_gui
