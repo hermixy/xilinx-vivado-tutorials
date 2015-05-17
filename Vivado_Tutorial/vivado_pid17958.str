@@ -19954,3 +19954,12 @@ setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "stop_gui", true); // W
 // Engine heap size: 5,782 MB. GUI used memory: 55 MB. Current time: 5/17/15 1:31:45 AM PDT
 // TclEventType: STOP_PROGRESS_DIALOG
 // Tcl Message: stop_gui 
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: NETLIST_UPDATE
+// TclEventType: POWER_CNS_STALE
+// TclEventType: NETLIST_UPDATE
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_CLOSE
+// TclEventType: DESIGN_NEW
+// TclEventType: TIMING_RESULTS_STALE
