@@ -9,3 +9,4 @@
 #-----------------------------------------------------------
 source create_bft_kintex7_batch.tcl
 synth_design -top bft
+write_checkpoint -force $outputDir/post_synth

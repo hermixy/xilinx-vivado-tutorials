@@ -1192,3 +1192,10 @@ INFO: [Common 17-83] Releasing license: Synthesis
 synth_design completed successfully
 synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1375.824 ; gain = 458.945 ; free physical = 1429 ; free virtual = 3942
 design_1
+write_checkpoint -force $outputDir/post_synth
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1407.836 ; gain = 0.000 ; free physical = 1423 ; free virtual = 3940
+/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Tutorial_Created_Data/bft_output/post_synth.dcp
