@@ -8,3 +8,4 @@
 # Journal file: /home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/vivado.jou
 #-----------------------------------------------------------
 source create_bft_kintex7_batch.tcl
+synth_design -top bft

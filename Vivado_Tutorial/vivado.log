@@ -15,3 +15,1180 @@ source create_bft_kintex7_batch.tcl
 # read_vhdl ./Sources/hdl/bft.vhdl
 # read_verilog  [ glob ./Sources/hdl/*.v ]
 # read_xdc ./Sources/bft_full_kintex7.xdc
+synth_design -top bft
+Command: synth_design -top bft
+Starting synth_design
+Using part: xc7k70tfbg484-2
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:02:03 . Memory (MB): peak = 940.875 ; gain = 132.457 ; free physical = 1830 ; free virtual = 4345
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'bft' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:52]
+WARNING: [Synth 8-614] signal 'wbInputData' is read in the process but is not in the sensitivity list [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:94]
+WARNING: [Synth 8-614] signal 'wbInputDataStage0' is read in the process but is not in the sensitivity list [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:94]
+INFO: [Synth 8-226] default block is never used [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:122]
+INFO: [Synth 8-638] synthesizing module 'round_1' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/round_1.vhdl:50]
+INFO: [Synth 8-638] synthesizing module 'coreTransform' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:60]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'coreTransform' (1#1) [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:60]
+INFO: [Synth 8-256] done synthesizing module 'round_1' (2#1) [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/round_1.vhdl:50]
+INFO: [Synth 8-638] synthesizing module 'round_2' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/round_2.vhdl:50]
+INFO: [Synth 8-256] done synthesizing module 'round_2' (3#1) [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/round_2.vhdl:50]
+INFO: [Synth 8-638] synthesizing module 'round_3' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/round_3.vhdl:50]
+INFO: [Synth 8-256] done synthesizing module 'round_3' (4#1) [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/round_3.vhdl:50]
+INFO: [Synth 8-638] synthesizing module 'round_4' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/round_4.vhdl:53]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'round_4' (5#1) [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/round_4.vhdl:53]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'ingressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:249]
+INFO: [Synth 8-638] synthesizing module 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31]
+INFO: [Synth 8-638] synthesizing module 'async_fifo' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/async_fifo.v:38]
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter FIFO_WIDTH bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 10 - type: integer 
+	Parameter FIRST_WORD_FALL_THROUGH bound to: FALSE - type: string 
+	Parameter ALMOST_EMPTY_OFFSET bound to: 9'b000100000 
+	Parameter ALMOST_FULL_OFFSET bound to: 9'b001111001 
+	Parameter USE_PROG_FULL_EMPTY bound to: FALSE - type: string 
+	Parameter FLAG_GENERATION bound to: FAST - type: string 
+	Parameter FIFO_RAM_TYPE bound to: BLOCKRAM - type: string 
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/async_fifo.v:234]
+INFO: [Synth 8-256] done synthesizing module 'async_fifo' (6#1) [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/async_fifo.v:38]
+WARNING: [Synth 8-350] instance 'buffer_fifo' of module 'async_fifo' requires 12 connections, but only 10 given [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:55]
+INFO: [Synth 8-256] done synthesizing module 'FifoBuffer' (7#1) [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'ingressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:249]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'ingressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:249]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'ingressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:249]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'ingressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:249]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'ingressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:249]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'ingressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:249]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'ingressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:249]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'egressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:255]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'egressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:255]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'egressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:255]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'egressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:255]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'egressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:255]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'egressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:255]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'egressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:255]
+INFO: [Synth 8-3491] module 'FifoBuffer' declared at '/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/FifoBuffer.v:31' bound to instance 'egressFifo' of component 'FifoBuffer' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:255]
+INFO: [Synth 8-226] default block is never used [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:288]
+INFO: [Synth 8-256] done synthesizing module 'bft' (8#1) [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bft.vhdl:52]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:02:04 . Memory (MB): peak = 977.164 ; gain = 168.746 ; free physical = 1793 ; free virtual = 4307
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:02:04 . Memory (MB): peak = 977.164 ; gain = 168.746 ; free physical = 1792 ; free virtual = 4307
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k70tfbg484-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/bft_full_kintex7.xdc]
+Finished Parsing XDC File [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/bft_full_kintex7.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.06 . Memory (MB): peak = 1286.297 ; gain = 1.000 ; free physical = 1600 ; free virtual = 4113
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:02:12 . Memory (MB): peak = 1286.301 ; gain = 477.883 ; free physical = 1599 ; free virtual = 4112
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:02:12 . Memory (MB): peak = 1286.301 ; gain = 477.883 ; free physical = 1599 ; free virtual = 4112
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:02:12 . Memory (MB): peak = 1286.301 ; gain = 477.883 ; free physical = 1599 ; free virtual = 4112
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "wbOutputData" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:02:12 . Memory (MB): peak = 1286.301 ; gain = 477.883 ; free physical = 1590 ; free virtual = 4103
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 32    
++---XORs : 
+	   2 Input     16 Bit         XORs := 64    
+	   2 Input     10 Bit         XORs := 32    
++---Registers : 
+	               32 Bit    Registers := 17    
+	               16 Bit    Registers := 96    
+	               14 Bit    Registers := 1     
+	               11 Bit    Registers := 32    
+	               10 Bit    Registers := 80    
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 85    
++---RAMs : 
+	              32K Bit         RAMs := 16    
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module bft 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+Module coreTransform 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     16 Bit         XORs := 2     
++---Registers : 
+	               16 Bit    Registers := 3     
+Module async_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---XORs : 
+	   2 Input     10 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 5     
+	                1 Bit    Registers := 5     
++---RAMs : 
+	              32K Bit         RAMs := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:02:12 . Memory (MB): peak = 1286.301 ; gain = 477.883 ; free physical = 1590 ; free virtual = 4103
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-4471] merging register 'xStepReg_reg[15:0]' into 'xStepReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:69]
+INFO: [Synth 8-4471] merging register 'uReg_reg[15:0]' into 'uReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:70]
+INFO: [Synth 8-4471] merging register 'xReg_reg[15:0]' into 'xReg_reg[15:0]' [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/hdl/bftLib/core_transform.vhdl:71]
+DSP Report: Generating DSP xOutReg_reg, operation Mode is: (C'+A2*B2)'.
+DSP Report: register xStepReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register uReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: register xOutReg_reg is absorbed into DSP xOutReg_reg.
+DSP Report: operator plusOp is absorbed into DSP xOutReg_reg.
+DSP Report: operator multOp is absorbed into DSP xOutReg_reg.
+DSP Report: Generating DSP multOp, operation Mode is: A2*B2.
+DSP Report: register xStepReg_reg is absorbed into DSP multOp.
+DSP Report: register uReg_reg is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP xOutStepReg_reg, operation Mode is: (C'-A:B)'.
+DSP Report: register xReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: register xOutStepReg_reg is absorbed into DSP xOutStepReg_reg.
+DSP Report: operator minusOp is absorbed into DSP xOutStepReg_reg.
+INFO: [Synth 8-5546] ROM "wbOutputData" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:02:15 . Memory (MB): peak = 1286.301 ; gain = 477.883 ; free physical = 1589 ; free virtual = 4103
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:16 ; elapsed = 00:02:15 . Memory (MB): peak = 1286.301 ; gain = 477.883 ; free physical = 1589 ; free virtual = 4103
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM:
++------------+--------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
+|Module Name | RTL Object                                                                           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG      | RAMB18 | RAMB36 | Hierarchical Name | 
++------------+--------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
+|bft         | ingressLoop[0].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__17    | 
+|bft         | ingressLoop[1].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__19    | 
+|bft         | ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__21    | 
+|bft         | ingressLoop[3].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__23    | 
+|bft         | ingressLoop[4].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__25    | 
+|bft         | ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__27    | 
+|bft         | ingressLoop[6].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__29    | 
+|bft         | ingressLoop[7].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__31    | 
+|bft         | egressLoop[0].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg   | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__33    | 
+|bft         | egressLoop[1].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg   | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__35    | 
+|bft         | egressLoop[2].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg   | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__37    | 
+|bft         | egressLoop[3].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg   | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__39    | 
+|bft         | egressLoop[4].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg   | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__41    | 
+|bft         | egressLoop[5].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg   | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__43    | 
+|bft         | egressLoop[6].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg   | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__45    | 
+|bft         | egressLoop[7].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg   | 1 K x 32               | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | bft/extram__47    | 
++------------+--------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
+
+Note: The table shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. "Hierarchical Name" reflects the Block RAM name as it appears in the hierarchical module and only part of it is displayed.
+DSP:
++--------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | (C'+A2*B2)' | No           | 16     | 16     | 16     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 1    | 
+|coreTransform | A2*B2       | No           | 16     | 16     | 48     | 25     | 32     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|coreTransform | (C'-A:B)'   | No           | 14     | 18     | 16     | -1     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 1    | 
++--------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[0].ingressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[0].ingressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[1].ingressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[1].ingressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[3].ingressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[3].ingressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[4].ingressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[4].ingressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[6].ingressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[6].ingressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[7].ingressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\ingressLoop[7].ingressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[0].egressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[0].egressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[1].egressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[1].egressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[2].egressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[2].egressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[3].egressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[3].egressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[4].egressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[4].egressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[5].egressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[5].egressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[6].egressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[6].egressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[7].egressFifo/buffer_fifo/infer_fifo.rd_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\egressLoop[7].egressFifo/buffer_fifo/infer_fifo.wr_addr_tmp_reg[10] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\validForEgressFifo_reg[13] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\validForEgressFifo_reg[12] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\validForEgressFifo_reg[11] ) is unused and will be removed from module bft.
+WARNING: [Synth 8-3332] Sequential element (\validForEgressFifo_reg[10] ) is unused and will be removed from module bft.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:02:18 . Memory (MB): peak = 1286.305 ; gain = 477.887 ; free physical = 1575 ; free virtual = 4088
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:02:18 . Memory (MB): peak = 1286.305 ; gain = 477.887 ; free physical = 1575 ; free virtual = 4088
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:02:18 . Memory (MB): peak = 1286.305 ; gain = 477.887 ; free physical = 1575 ; free virtual = 4088
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:02:29 . Memory (MB): peak = 1319.297 ; gain = 510.879 ; free physical = 1484 ; free virtual = 3997
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:02:30 . Memory (MB): peak = 1340.297 ; gain = 531.879 ; free physical = 1464 ; free virtual = 3976
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance \ingressLoop[0].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \ingressLoop[1].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \ingressLoop[2].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \ingressLoop[3].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \ingressLoop[4].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \ingressLoop[5].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \ingressLoop[6].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \ingressLoop[7].ingressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \egressLoop[0].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \egressLoop[1].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \egressLoop[2].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \egressLoop[3].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \egressLoop[4].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \egressLoop[5].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \egressLoop[6].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \egressLoop[7].egressFifo/buffer_fifo/infer_fifo.block_ram_performance.fifo_ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:02:33 . Memory (MB): peak = 1375.820 ; gain = 567.402 ; free physical = 1430 ; free virtual = 3942
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:02:33 . Memory (MB): peak = 1375.820 ; gain = 567.402 ; free physical = 1430 ; free virtual = 3942
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:02:33 . Memory (MB): peak = 1375.820 ; gain = 567.402 ; free physical = 1430 ; free virtual = 3942
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:02:35 . Memory (MB): peak = 1375.820 ; gain = 567.402 ; free physical = 1429 ; free virtual = 3942
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:02:35 . Memory (MB): peak = 1375.820 ; gain = 567.402 ; free physical = 1429 ; free virtual = 3942
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:02:35 . Memory (MB): peak = 1375.820 ; gain = 567.402 ; free physical = 1429 ; free virtual = 3942
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |    80|
+|3     |DSP48E1   |    32|
+|4     |DSP48E1_1 |    32|
+|5     |DSP48E1_2 |    32|
+|6     |LUT1      |    49|
+|7     |LUT2      |  1481|
+|8     |LUT3      |    86|
+|9     |LUT4      |   139|
+|10    |LUT5      |    72|
+|11    |LUT6      |   403|
+|12    |RAMB36E1  |    16|
+|13    |FDCE      |  1312|
+|14    |FDPE      |   192|
+|15    |FDRE      |    58|
+|16    |IBUF      |    37|
+|17    |OBUF      |    34|
++------+----------+------+
+
+Report Instance Areas: 
++------+-------------------------------+-----------------+------+
+|      |Instance                       |Module           |Cells |
++------+-------------------------------+-----------------+------+
+|1     |top                            |                 |  4057|
+|2     |  arnd1                        |round_1          |   280|
+|3     |    \transformLoop[0].ct       |coreTransform_53 |    35|
+|4     |    \transformLoop[1].ct       |coreTransform_54 |    35|
+|5     |    \transformLoop[2].ct       |coreTransform_55 |    35|
+|6     |    \transformLoop[3].ct       |coreTransform_56 |    35|
+|7     |    \transformLoop[4].ct       |coreTransform_57 |    35|
+|8     |    \transformLoop[5].ct       |coreTransform_58 |    35|
+|9     |    \transformLoop[6].ct       |coreTransform_59 |    35|
+|10    |    \transformLoop[7].ct       |coreTransform_60 |    35|
+|11    |  arnd2                        |round_2          |   280|
+|12    |    ct0                        |coreTransform_45 |    35|
+|13    |    ct1                        |coreTransform_46 |    35|
+|14    |    ct2                        |coreTransform_47 |    35|
+|15    |    ct3                        |coreTransform_48 |    35|
+|16    |    ct4                        |coreTransform_49 |    35|
+|17    |    ct5                        |coreTransform_50 |    35|
+|18    |    ct6                        |coreTransform_51 |    35|
+|19    |    ct7                        |coreTransform_52 |    35|
+|20    |  arnd3                        |round_3          |   280|
+|21    |    \transformLoop[0].ct0      |coreTransform_37 |    35|
+|22    |    \transformLoop[0].ct1      |coreTransform_38 |    35|
+|23    |    \transformLoop[1].ct0      |coreTransform_39 |    35|
+|24    |    \transformLoop[1].ct1      |coreTransform_40 |    35|
+|25    |    \transformLoop[2].ct0      |coreTransform_41 |    35|
+|26    |    \transformLoop[2].ct1      |coreTransform_42 |    35|
+|27    |    \transformLoop[3].ct0      |coreTransform_43 |    35|
+|28    |    \transformLoop[3].ct1      |coreTransform_44 |    35|
+|29    |  arnd4                        |round_4          |   280|
+|30    |    \transformLoop[0].ct       |coreTransform    |    35|
+|31    |    \transformLoop[1].ct       |coreTransform_30 |    35|
+|32    |    \transformLoop[2].ct       |coreTransform_31 |    35|
+|33    |    \transformLoop[3].ct       |coreTransform_32 |    35|
+|34    |    \transformLoop[4].ct       |coreTransform_33 |    35|
+|35    |    \transformLoop[5].ct       |coreTransform_34 |    35|
+|36    |    \transformLoop[6].ct       |coreTransform_35 |    35|
+|37    |    \transformLoop[7].ct       |coreTransform_36 |    35|
+|38    |  \egressLoop[0].egressFifo    |FifoBuffer       |   168|
+|39    |    buffer_fifo                |async_fifo_29    |   168|
+|40    |  \egressLoop[1].egressFifo    |FifoBuffer_0     |   200|
+|41    |    buffer_fifo                |async_fifo_28    |   200|
+|42    |  \egressLoop[2].egressFifo    |FifoBuffer_1     |   200|
+|43    |    buffer_fifo                |async_fifo_27    |   200|
+|44    |  \egressLoop[3].egressFifo    |FifoBuffer_2     |   168|
+|45    |    buffer_fifo                |async_fifo_26    |   168|
+|46    |  \egressLoop[4].egressFifo    |FifoBuffer_3     |   169|
+|47    |    buffer_fifo                |async_fifo_25    |   169|
+|48    |  \egressLoop[5].egressFifo    |FifoBuffer_4     |   200|
+|49    |    buffer_fifo                |async_fifo_24    |   200|
+|50    |  \egressLoop[6].egressFifo    |FifoBuffer_5     |   169|
+|51    |    buffer_fifo                |async_fifo_23    |   169|
+|52    |  \egressLoop[7].egressFifo    |FifoBuffer_6     |   171|
+|53    |    buffer_fifo                |async_fifo_22    |   171|
+|54    |  \ingressLoop[0].ingressFifo  |FifoBuffer_7     |   169|
+|55    |    buffer_fifo                |async_fifo_21    |   169|
+|56    |  \ingressLoop[1].ingressFifo  |FifoBuffer_8     |   169|
+|57    |    buffer_fifo                |async_fifo_20    |   169|
+|58    |  \ingressLoop[2].ingressFifo  |FifoBuffer_9     |   169|
+|59    |    buffer_fifo                |async_fifo_19    |   169|
+|60    |  \ingressLoop[3].ingressFifo  |FifoBuffer_10    |   169|
+|61    |    buffer_fifo                |async_fifo_18    |   169|
+|62    |  \ingressLoop[4].ingressFifo  |FifoBuffer_11    |   169|
+|63    |    buffer_fifo                |async_fifo_17    |   169|
+|64    |  \ingressLoop[5].ingressFifo  |FifoBuffer_12    |   169|
+|65    |    buffer_fifo                |async_fifo_16    |   169|
+|66    |  \ingressLoop[6].ingressFifo  |FifoBuffer_13    |   169|
+|67    |    buffer_fifo                |async_fifo_15    |   169|
+|68    |  \ingressLoop[7].ingressFifo  |FifoBuffer_14    |   169|
+|69    |    buffer_fifo                |async_fifo       |   169|
++------+-------------------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:02:35 . Memory (MB): peak = 1375.820 ; gain = 567.402 ; free physical = 1429 ; free virtual = 3942
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 36 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1375.820 ; gain = 149.809 ; free physical = 1429 ; free virtual = 3942
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:02:35 . Memory (MB): peak = 1375.820 ; gain = 567.402 ; free physical = 1429 ; free virtual = 3942
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 229 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/bft_full_kintex7.xdc]
+Finished Parsing XDC File [/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Sources/bft_full_kintex7.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+160 Infos, 39 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1375.824 ; gain = 458.945 ; free physical = 1429 ; free virtual = 3942
+design_1
