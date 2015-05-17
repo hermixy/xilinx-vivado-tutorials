@@ -1,0 +1,215 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2015.1 (lin64) Build 1215546 Mon Apr 27 19:07:21 MDT 2015
+| Date             : Sun May 17 01:20:35 2015
+| Host             : MY-Ubuntu running 64-bit Ubuntu 14.04.2 LTS
+| Command          : report_power -file ./Tutorial_Created_Data/bft_output/post_synth_power.rpt
+| Design           : bft
+| Device           : xc7k70tfbg484-2
+| Design State     : Synthesized
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+--------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-------+
+| Total On-Chip Power (W)  | 0.424 |
+| Dynamic (W)              | 0.341 |
+| Device Static (W)        | 0.083 |
+| Effective TJA (C/W)      | 2.5   |
+| Max Ambient (C)          | 83.9  |
+| Junction Temperature (C) | 26.1  |
+| Confidence Level         | Low   |
+| Setting File             | ---   |
+| Simulation Activity File | ---   |
+| Design Nets Matched      | NA    |
++--------------------------+-------+
+
+
+1.1 On-Chip Components
+----------------------
+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Clocks         |     0.020 |        4 |       --- |             --- |
+| Slice Logic    |     0.021 |     4034 |       --- |             --- |
+|   LUT as Logic |     0.020 |     1989 |     41000 |            4.85 |
+|   Register     |    <0.001 |     1562 |     82000 |            1.90 |
+|   CARRY4       |    <0.001 |       80 |     10250 |            0.78 |
+|   Others       |     0.000 |      162 |       --- |             --- |
+| Signals        |     0.067 |     7171 |       --- |             --- |
+| Block RAM      |     0.045 |       16 |       135 |           11.85 |
+| DSPs           |     0.187 |       96 |       240 |           40.00 |
+| I/O            |    <0.001 |       71 |       285 |           24.91 |
+| Static Power   |     0.083 |          |           |                 |
+| Total          |     0.424 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.360 |       0.338 |      0.023 |
+| Vccaux    |       1.800 |     0.012 |       0.000 |      0.012 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.001 |       0.000 |      0.001 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.004 |       0.003 |      0.001 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | Low        | Design is synthesized                                  | Accuracy of the tool is not optimal until design is fully placed and routed                                |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 2.5                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.2                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++--------+--------+-----------------+
+| Clock  | Domain | Constraint (ns) |
++--------+--------+-----------------+
+| bftClk | bftClk |             5.0 |
+| wbClk  | wbClk  |            10.0 |
++--------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++------------------------------+-----------+
+| Name                         | Power (W) |
++------------------------------+-----------+
+| bft                          |     0.341 |
+|   arnd1                      |     0.062 |
+|     transformLoop[0].ct      |     0.008 |
+|     transformLoop[1].ct      |     0.008 |
+|     transformLoop[2].ct      |     0.008 |
+|     transformLoop[3].ct      |     0.007 |
+|     transformLoop[4].ct      |     0.008 |
+|     transformLoop[5].ct      |     0.008 |
+|     transformLoop[6].ct      |     0.008 |
+|     transformLoop[7].ct      |     0.007 |
+|   arnd2                      |     0.066 |
+|     ct0                      |     0.008 |
+|     ct1                      |     0.008 |
+|     ct2                      |     0.008 |
+|     ct3                      |     0.008 |
+|     ct4                      |     0.008 |
+|     ct5                      |     0.008 |
+|     ct6                      |     0.008 |
+|     ct7                      |     0.008 |
+|   arnd3                      |     0.068 |
+|     transformLoop[0].ct0     |     0.009 |
+|     transformLoop[0].ct1     |     0.009 |
+|     transformLoop[1].ct0     |     0.009 |
+|     transformLoop[1].ct1     |     0.009 |
+|     transformLoop[2].ct0     |     0.009 |
+|     transformLoop[2].ct1     |     0.009 |
+|     transformLoop[3].ct0     |     0.009 |
+|     transformLoop[3].ct1     |     0.009 |
+|   arnd4                      |     0.067 |
+|     transformLoop[0].ct      |     0.008 |
+|     transformLoop[1].ct      |     0.008 |
+|     transformLoop[2].ct      |     0.008 |
+|     transformLoop[3].ct      |     0.008 |
+|     transformLoop[4].ct      |     0.008 |
+|     transformLoop[5].ct      |     0.008 |
+|     transformLoop[6].ct      |     0.008 |
+|     transformLoop[7].ct      |     0.008 |
+|   egressLoop[0].egressFifo   |     0.005 |
+|     buffer_fifo              |     0.005 |
+|   egressLoop[1].egressFifo   |     0.006 |
+|     buffer_fifo              |     0.006 |
+|   egressLoop[2].egressFifo   |     0.006 |
+|     buffer_fifo              |     0.006 |
+|   egressLoop[3].egressFifo   |     0.005 |
+|     buffer_fifo              |     0.005 |
+|   egressLoop[4].egressFifo   |     0.005 |
+|     buffer_fifo              |     0.005 |
+|   egressLoop[5].egressFifo   |     0.006 |
+|     buffer_fifo              |     0.006 |
+|   egressLoop[6].egressFifo   |     0.005 |
+|     buffer_fifo              |     0.005 |
+|   egressLoop[7].egressFifo   |     0.005 |
+|     buffer_fifo              |     0.005 |
+|   ingressLoop[0].ingressFifo |     0.004 |
+|     buffer_fifo              |     0.004 |
+|   ingressLoop[1].ingressFifo |     0.004 |
+|     buffer_fifo              |     0.004 |
+|   ingressLoop[2].ingressFifo |     0.004 |
+|     buffer_fifo              |     0.004 |
+|   ingressLoop[3].ingressFifo |     0.004 |
+|     buffer_fifo              |     0.004 |
+|   ingressLoop[4].ingressFifo |     0.004 |
+|     buffer_fifo              |     0.004 |
+|   ingressLoop[5].ingressFifo |     0.004 |
+|     buffer_fifo              |     0.004 |
+|   ingressLoop[6].ingressFifo |     0.004 |
+|     buffer_fifo              |     0.004 |
+|   ingressLoop[7].ingressFifo |     0.004 |
+|     buffer_fifo              |     0.004 |
++------------------------------+-----------+
+
+

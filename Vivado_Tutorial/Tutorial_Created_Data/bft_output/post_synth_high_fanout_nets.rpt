@@ -1,0 +1,22 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.1 (lin64) Build 1215546 Mon Apr 27 19:07:21 MDT 2015
+| Date         : Sun May 17 01:20:56 2015
+| Host         : MY-Ubuntu running 64-bit Ubuntu 14.04.2 LTS
+| Command      : report_high_fanout_nets -min_fanout 200 -max_nets 50 -file ./Tutorial_Created_Data/bft_output/post_synth_high_fanout_nets.rpt
+| Design       : bft
+| Device       : xc7k70t
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++------------+--------+-------------+
+| Net Name   | Fanout | Driver Type |
++------------+--------+-------------+
+| reset_IBUF |   1555 | IBUF        |
++------------+--------+-------------+
+
+

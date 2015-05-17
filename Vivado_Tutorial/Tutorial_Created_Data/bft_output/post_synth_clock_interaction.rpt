@@ -1,0 +1,25 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.1 (lin64) Build 1215546 Mon Apr 27 19:07:21 MDT 2015
+| Date         : Sun May 17 01:20:46 2015
+| Host         : MY-Ubuntu running 64-bit Ubuntu 14.04.2 LTS
+| Command      : report_clock_interaction -delay_type min_max -file ./Tutorial_Created_Data/bft_output/post_synth_clock_interaction.rpt
+| Design       : bft
+| Device       : 7k70t-fbg484
+| Speed File   : -2  PRODUCTION 1.12 2014-09-11
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                            WNS                            TNS Failing  TNS Total    WNS Path         WHS                            THS Failing  THS Total    WHS Path         Common         Inter-Clock     
+From Clock    To Clock      Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Clock Edges  WHS(ns)  THS(ns)    Endpoints    Endpoints  Requirement(ns)  Primary Clock  Constraints     
+------------  ------------  -----------  -------  -------  -----------  -----------  ---------------  -----------  -------  -------  -----------  -----------  ---------------  -------------  --------------  
+bftClk        bftClk        rise - rise     0.22     0.00            0         7705             5.00  rise - rise     0.17     0.00            0         7705             0.00  Yes            Timed           
+bftClk        wbClk         rise - rise     3.40     0.00            0           33             5.00  rise - rise    -0.07    -0.21            1           33             0.00  No             Timed (unsafe)  
+wbClk         bftClk        rise - rise     3.37     0.00            0          440             5.00  rise - rise     0.06     0.00            0          440             0.00  No             Timed (unsafe)  
+wbClk         wbClk         rise - rise     7.36     0.00            0         1803            10.00  rise - rise     0.17     0.00            0         1803             0.00  Yes            Timed           
+
+

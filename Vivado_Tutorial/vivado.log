@@ -1199,3 +1199,20 @@ Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
 Write XDEF Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1407.836 ; gain = 0.000 ; free physical = 1423 ; free virtual = 3940
 /home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Tutorial_Created_Data/bft_output/post_synth.dcp
+report_timing_summary -file $outputDir/post_synth_timing_summary.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+report_timing_summary: Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1679.043 ; gain = 271.203 ; free physical = 1222 ; free virtual = 3745
+report_power -file $outputDir/post_synth_power.rpt
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+report_clock_interaction -delay_type min_max -file $outputDir/post_synth_clock_interaction.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+WARNING: [Timing 38-164] This design has multiple clocks. Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+report_high_fanout_nets -min_fanout 200 -max_nets 50 -file $outputDir/post_synth_high_fanout_nets.rpt
+WARNING: [Vivado 12-4265] -min_fanout option has been deprecated and will be removed in future release. Please use -fanout_greater_than option instead.
+report_high_fanout_nets: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1721.105 ; gain = 0.000 ; free physical = 1177 ; free virtual = 3696
+/home/surendra/git/xilinx-vivado-tutorials/Vivado_Tutorial/Tutorial_Created_Data/bft_output/post_synth_high_fanout_nets.rpt
